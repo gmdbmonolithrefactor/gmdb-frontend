@@ -14,7 +14,7 @@ export class MoviesService {
 
     //Edit url to your backend location
    const url = 'http://localhost:8080/api/movies-gmdb-service/movies';
-  //  return this.http.get<Movies[]>(this.url)
+   return this.http.get<Movies[]>(this.url)
 
   }
   getMovieByID(id: number): Movies {
