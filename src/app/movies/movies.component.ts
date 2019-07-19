@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movies } from './movies';
 import { data } from './data';
 import {Router} from '@angular/router';
+import { MoviesService } from './movies.service';
 
 @Component({
   // selector: 'app-movies',
@@ -11,14 +12,14 @@ import {Router} from '@angular/router';
 export class MoviesComponent implements OnInit {
 
   Movies: any[];
-  constructor(private router: Router) {
+  constructor(private router: Router, private moviesservice: MoviesService) {
+
   }
 
 
   public ngOnInit() {
-      
+    this.moviesservice.getAllMovies().subscribe(resp => console.log(resp))
     this.Movies = data;
-
   }
 
 

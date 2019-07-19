@@ -11,10 +11,11 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieByMyId(id: number){
+  getAllMovies(){
 
     //Edit url to your backend location
-   const url = 'http://localhost:8080/api/movies-gmdb-service/movies';
+   const url = 'http://localhost:8080/movies';
+   return this.http.get(url)
    // return this.http.get<Movies[]>(url)
 
   }
