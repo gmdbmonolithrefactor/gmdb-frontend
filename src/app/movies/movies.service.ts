@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { data } from './data';
 import { Movies } from './movies';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Movies } from './movies';
 export class MoviesService {
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getMovieByMyId(id: number){
 
